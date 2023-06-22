@@ -1,0 +1,8 @@
+on: [push]
+name: AzureSampleLogin
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: azure/login@v1
+      
