@@ -1,7 +1,9 @@
 # File: .github/workflows/workflow.yml
 
 on: [push]
-
+permissions:
+      id-token: write
+      contents: read
 name: AzurePowerShellLoginSample
 
 jobs:
@@ -17,7 +19,7 @@ jobs:
         client-id: ${{ secrets.AZURE_OIDC_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        enable-AzPSSession: true
+        #enable-AzPSSession: true
     - name: Azure CLI Script
       uses: azure/CLI@v1
       with:
